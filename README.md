@@ -35,29 +35,11 @@ the built-in JSON models to a MySQL database.
 
 ## Dependencies 
 
-Front-end:
 - react
 - react-router-dom (V5.3)
 - react-icons
 - axios
 - sass
-
-Back-end:
-- axios
-- casual
-- cors
-- dotenv
-- express
-- fs
-- nodemon (dev)
-
-Future use:
-- helmet
-- knex
-- mysql
-- passport
-- passport-github2
-
 
 ## API Reference
 
@@ -85,7 +67,6 @@ The Streaming Availability API was used to get get the initial data set
 
 ### Installation
 
-Front-end:
 1. Clone the repo
    ```sh
    git clone https://github.com/ADRcodes/Movie-Knight.git
@@ -97,20 +78,6 @@ Front-end:
 3. Run start script
    ```sh
    npm start
-   ```
-
-Back-end:
-1. Clone the repo
-   ```sh
-   git clone https://github.com/ADRcodes/Movie-Knight-Api.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Run start script
-   ```sh
-   npm run dev
    ```
 Production coming soon
 
@@ -138,3 +105,4 @@ this better, please fork the repo and create a pull request.
 
 ## Screenshots
 
+![MovieKnightIcon](https://user-images.githubusercontent.com/97254763/161998277-ef012712-546f-40b9-b2ed-904732e1344a.png)
