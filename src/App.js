@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import "./App.scss";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Nav from "./components/Nav/Nav";
+import Browse from "./pages/Browse/Browse";
+import RankedMovies from "./pages/RankedMovies/RankedMovies"
 
-function App() {
+
+class App extends Component {
+  // state = {
+  //   isLoggedIn: true
+  // }
+
+  // toggleLoggedIn = () => {
+  //   this.setState({
+  //     isLoggedIn: !this.state.isLoggedIn
+  //   })
+  // }
+
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Nav/>
+      <Switch>
+        <Route path="/" exact component={Browse} />
+        <Route path="/ranked-movies" component={RankedMovies} />
+      </Switch>
+    </BrowserRouter>
   );
+  }
 }
 
 export default App;
+
