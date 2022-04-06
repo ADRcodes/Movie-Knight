@@ -1,0 +1,23 @@
+// @use "./typography" as *;
+@import './colors';
+@import './mixins';
+
+
+* {    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    // font-size: $root-font-size;
+    // font-family: $font-stack;
+    background-color: $color-main-background;
+    color: $color-text;
+    margin: 0;
+
+}
+
+body { 
+    margin: 0;
+}

@@ -1,34 +1,15 @@
 import { Component } from "react";
 import "./App.scss";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Nav from "./components/Nav/Nav";
+import { BrowserRouter, Route} from "react-router-dom";
 import Browse from "./pages/Browse/Browse";
-import RankedMovies from "./pages/RankedMovies/RankedMovies"
-
 
 class App extends Component {
-  // state = {
-  //   isLoggedIn: true
-  // }
-
-  // toggleLoggedIn = () => {
-  //   this.setState({
-  //     isLoggedIn: !this.state.isLoggedIn
-  //   })
-  // }
-
   render() {
-  return (
-    <BrowserRouter>
-      <Nav/>
-      <Switch>
-        <Route path="/" exact component={Browse} />
-        <Route path="/ranked-movies" component={RankedMovies} />
-      </Switch>
-    </BrowserRouter>
-  );
+    return (
+      <BrowserRouter>
+          <Route path="/browse" exact component={Browse} />
+      </BrowserRouter>
+    );
   }
 }
-
 export default App;
-

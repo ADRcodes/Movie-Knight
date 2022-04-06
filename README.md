@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# Movie Knight
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This capstone project was created by Alex Russell for the completion of 
+the Web Development Diploma Program at BrainStation.
 
-## Available Scripts
+Many people have several streaming sites these days, and it can be tedious to 
+constantly search through all of them to find the movie you want to watch. 
+Often you might even forget that you have some of the services.
+Even if you only have one platform, it can take forever to pick a movie to watch 
+with friends. There’s currently no way to filter out movies based on what you 
+and your friends have watched, let alone to automatically find the best movie 
+for your group.
 
-In the project directory, you can run:
+Movie Knight lets you browse movies from all the streaming services you have, 
+in one place. Once you browse and rate movies based on how much you want to 
+watch them, you can invite your friends to do the same, and then Movie Knight 
+compares them to see which you would most want to watch together.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Search movies from Netflix, Disney or Amazon (more to be added) by clicking on their icons
+- Rank movies based on how much you would like to watch them
+- See your ranked movies by clicking the "Ranked Movies" button
+- See your friend ranked movies by clicking the their icon once the "Ranked Movies" button is selected
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Specs
 
-### `npm run build`
+This project was bootstrapped with Create React App.
+I used React and React Router Dom to write the front end, while my server is 
+Express.js and Node.js. My next project steps will be migrating my data from 
+the built-in JSON models to a MySQL database.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dependencies 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Front-end:
+- react
+- react-router-dom (V5.3)
+- react-icons
+- axios
+- sass
 
-### `npm run eject`
+Back-end:
+- axios
+- casual
+- cors
+- dotenv
+- express
+- fs
+- nodemon (dev)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Future use:
+- helmet
+- knex
+- mysql
+- passport
+- passport-github2
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Reference
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Get all movies
 
-## Learn More
+```http
+  GET /browse
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Edit rating
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```http
+  PUT /browse/:imdbID
+```
 
-### Code Splitting
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `imdbID`  | `string` | **Required**. Id of movie to update |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## External API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The Streaming Availability API was used to get get the initial data set
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Installation
 
-### Advanced Configuration
+Front-end:
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ADRcodes/Movie-Knight.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run start script
+   ```sh
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Back-end:
+1. Clone the repo
+   ```sh
+   git clone https://github.com/ADRcodes/Movie-Knight-Api.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run start script
+   ```sh
+   npm run dev
+   ```
+Production coming soon
 
-### Deployment
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions are always welcome! If you have a suggestion that would make 
+this better, please fork the repo and create a pull request.
 
-### `npm run build` fails to minify
+- Fork the Project
+- Create your Feature Branch (git checkout -b feature/yourFeature)
+- Commit your Changes (git commit -m 'Add some yourFeature')
+- Push to the Branch (git push origin feature/yourFeature)
+- Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Roadmap
+
+- Add a database for storing the data and user info
+- Add friend search
+- Ensure the entire movie base on any platform is able to be viewed
+- Deploy project
+- Add trailers
+- Add other ratings
+
+
+## Screenshots
+

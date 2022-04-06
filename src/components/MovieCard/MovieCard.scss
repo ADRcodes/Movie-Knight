@@ -1,0 +1,200 @@
+@import '../../styles/global';
+
+.movie{
+    display: block;
+    box-shadow: 0 0 10px #ffee10;
+    text-shadow: 0 0 10px #ffee10;
+    border-radius: 20px;
+    color: white;
+    width: 250px;
+    height: 350px;
+    margin: 0.7rem 0.1rem 0.5rem 0.1rem;
+    line-height: 20px;
+    position: relative;
+
+// ------ Will impliment later ------
+// transform: scale(0.9);
+// cursor: pointer;
+
+    :hover{
+        opacity: 1;
+        height: auto;
+        // transform: scale(1);
+        z-index: 5;
+    }
+    
+    &__poster-container{
+        overflow: hidden;
+        position: relative;
+        width: 248px;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    &__poster{
+        width: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    &__friend-ranked{
+        position: absolute;
+        bottom: 0;
+        font-size: 40px;
+        padding-top: 55px;
+        width: 100%;
+        height: 135px;
+        text-align: center;
+        background: linear-gradient(to bottom, transparent, 25%, black, 70%, transparent);
+        pointer-events: none;
+
+        &--active{
+            display: block;
+            z-index: 3;
+        }
+        &--inactive{
+            display: none;
+            z-index: 3;
+        }
+
+    }
+    &__ranked{
+        position: absolute;
+        bottom: 0;
+        font-size: 40px;
+        padding-top: 40px;
+        width: 100%;
+        height: 90px;
+        text-align: center;
+        background: linear-gradient(to bottom, transparent, 30%, black);
+        pointer-events: none;
+
+        &--active{
+            pointer-events: none;
+            display: block;
+            z-index: 2;
+        }
+        &--inactive{
+            pointer-events: none;
+            display: none;
+            z-index: 2;
+        }
+    }
+
+
+    &__text-container{
+        padding: 0.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(80, 78, 78, 0.8);
+        border-radius: 20px;
+        width: 100%;
+        height: 100%; 
+        min-height: 348px;
+        opacity: 0;
+        transition: all 400ms ease-out;
+        :hover{
+            opacity: 1;
+        }
+    }
+    
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        pointer-events: none;
+    }
+
+    &__year{
+        text-align: center;
+        pointer-events: none;
+    }
+
+    &__overview{
+        font-size: 16px;
+        pointer-events: none;
+    }
+
+    &__genres, &__imdbRating, &__rating {
+        pointer-events: none;
+        display: flex;
+    }
+    &__genre1, &__genre2, &__genre3 {
+        border-radius: 4px;
+        padding: 0.08rem 0.2rem;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+    }
+    &__genre1 {
+        background-color: cornflowerblue;
+    }
+    &__genre2 {
+        background-color: rgb(125, 100, 237);
+    }
+    &__genre3 {
+        background-color: rgb(237, 132, 100);
+
+        &--inactive{
+            display: none;
+        }
+    }
+
+
+    &__streaming-links{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0.4rem 0 0 0;
+        pointer-events: none;
+        :hover{
+            min-height: 40px;
+            max-height: 40px;
+            width: 40px;
+            transform: scale(1.1);
+        }
+    }
+
+    &__streaming-info-netflix, &__streaming-info-disney{
+        pointer-events: none;
+        :hover{
+            min-height: 40px;
+            max-height: 40px;
+            width: 40px;
+        }
+        &--inactive{
+            display: none;
+        }
+    }
+
+    &__netflix-icon, &__disney-icon{
+        width: 40px;
+        border-radius: 50%;
+        pointer-events: auto;
+        transition: all 600ms ease-out;
+    }
+    
+    &__stars{
+        pointer-events: auto;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    &__top-movie--active{
+        position:absolute;
+        font-size: 30px;
+        top: -250px;
+        left: -70px;
+        width: 300px;
+        z-index: 3;
+        transform: skew(1deg, -25deg);
+        padding: 1rem;
+        background-color: rgba(44, 44, 44, 0.9);
+        box-shadow: 0 0 10px #ffee10;
+    }
+    &__top-movie--inactive{
+        display: none;
+    }
+}

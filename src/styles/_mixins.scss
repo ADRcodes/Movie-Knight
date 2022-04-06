@@ -1,0 +1,53 @@
+@import "./variables";
+
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin glow-hover {
+    border-radius: 40px;
+    position: relative; 
+    display: block;
+    text-align: center;
+    transition: .5s;
+
+    ::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 40px;
+        background: #ffee10;
+        transition: 1.5s;
+        transform: scale(.9);
+        z-index: -1;
+    }
+    :hover::before {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #ffee10;
+      }
+      :hover {
+        color: #ffee10;
+        box-shadow: 0 0 10px #ffee10;
+        text-shadow: 0 0 10px #ffee10;
+      }
+
+    &--active{
+        opacity: 0.5;
+    }
+}
+
+@mixin glow {
+    box-shadow: 0 0 10px #ffee10;
+    text-shadow: 0 0 10px #ffee10;
+}

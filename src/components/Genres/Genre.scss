@@ -1,0 +1,95 @@
+@import '../../styles/global';
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    
+  }
+  .dropdown__content {
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    z-index: 3;
+  }
+  .dropdown:hover .dropdown__content {
+    display: block;
+    box-shadow: 0 0 10px #ffee10;
+  }
+  .dropdown__content p {
+    display: block;
+    color: #ffee10;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    text-decoration: none;
+    
+  }
+  .dropdown__content p:hover {
+    color: #FFFFFF;
+    background-color: #d4c600;
+    z-index: 3;
+  }
+
+  .dropdown__button{
+      width: 100px;
+      padding: 0.2rem;
+      border-radius: 20px;
+      color: #ffef10bb;
+      background-color: rgba(0, 0, 0, 0.7);
+      @include glow-hover;
+  }
+
+
+//--------- Below is how I wanted to format the code, but the hover wasn't working so I will impliment it properly later --------
+
+// .dropdown {
+//   display: inline-block;
+//   position: relative;
+//   z-index: 5;
+  
+//   &__button{
+//     width: 100px;
+//     padding: 0.2rem;
+//     border-radius: 20px;
+//     color: #ffef10d5;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     @include glow-hover;
+//   }
+  
+//   &__content {
+//     display: none;
+//     position: absolute;
+//     border-radius: 10px;
+//     width: 100%;
+//     overflow: auto;
+//     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+//     z-index: 3;
+//     box-shadow: 0 0 10px #ffee10;
+    
+//     :hover {
+//       display: block;
+//       box-shadow: 0 0 10px #ffee10;
+//     }
+//   }
+
+//   :hover {
+//     display: block;
+//     box-shadow: 0 0 10px #ffee10;
+//   }
+  
+//   &__option{
+//     display: block;
+//     color: #ffee10;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     padding: 5px;
+//     text-decoration: none; 
+
+//     :hover{
+//       color: #FFFFFF;
+//       background-color: #d4c600;
+//       z-index: 3;
+//     }
+//   }
+// }
