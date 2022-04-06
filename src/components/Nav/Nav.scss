@@ -1,6 +1,5 @@
 @import '../../styles/global';
 
-
 .nav{
     display: flex;
     justify-content: space-between;
@@ -25,6 +24,13 @@
         padding: 0.3rem 1rem;
         border-radius: 20px;
         margin-right: 1rem;
+        color: rgba(253, 217, 11, 0.801);
+        background-color: black;
+        @include glow-hover;
+        :placeholder{
+            text-shadow: 0 0 10px #ffee10;
+            color: rgba(253, 217, 11, 0.801);
+        }
     }
 
     &__container-right{

@@ -26,11 +26,20 @@ class Browse extends Component {
         if (!this.state.disney) {
           filteredMovies = filteredMovies.filter(disneyTrue => !disneyTrue.streamingInfoDisney)
         }
-        if (this.state.ranked) {
+        if (this.state.ranked && !this.state.friend) {
           filteredMovies = filteredMovies.filter(ratingTrue => ratingTrue.rating).sort((a, b) => b.rating - a.rating)
         }
         if (this.state.friend) {
-          filteredMovies = filteredMovies.filter(friendTrue => friendTrue.friendRating).sort((a, b) => b.rating - a.rating)
+          filteredMovies = filteredMovies.filter(friendTrue => friendTrue.friendRating || friendTrue.rating).sort((a, b) => b.rating - a.rating)
+          let totalRating = 0
+          filteredMovies.forEach(movie => {
+            totalRating = 0
+            if(movie.rating && movie.friendRating){
+              totalRating = +movie.rating + +movie.friendRating;
+            }
+            movie.totalRating = totalRating;
+          })
+          filteredMovies.sort((a, b) => b.totalRating - a.totalRating)
         }
         if (this.state.genre !== "All Genres") {
           filteredMovies = filteredMovies.filter(genre => genre.genre1 === this.state.genre)
