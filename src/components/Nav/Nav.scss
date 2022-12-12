@@ -1,115 +1,129 @@
-@import '../../styles/global';
+@import "../../styles/global";
 
-.nav{
+.nav {
+  display: flex;
+  //   flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(68, 65, 65);
+  align-items: center;
+  padding: 1rem;
+  font-size: 16px;
+
+  @include tablet {
+    // background-color: aquamarine;
+    flex-direction: row;
+  }
+
+  &__container-left {
     display: flex;
-    justify-content: space-between;
-    background-color:rgb(68, 65, 65);
     align-items: center;
-    padding: 1rem;
-    font-size: 16px;
+    justify-content: space-between;
+    width: 40vw;
+  }
 
-    &__container-left{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 40vw;
+  &__website-title {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: 47% 0;
+
+    @include tablet {
+      width: 180px;
+      height: 40px;
+      object-fit: contain;
+      object-position: 100% 0;
     }
-    
-    &__website-title{
-        width: 180px;
-    }
-    
-    &__search{
-        width: 140px;
-        padding: 0.3rem 1rem;
-        border-radius: 20px;
-        margin-right: 1rem;
-        color: rgba(253, 217, 11, 0.801);
-        background-color: black;
-        @include glow-hover;
-        :placeholder{
-            text-shadow: 0 0 10px #ffee10;
-            color: rgba(253, 217, 11, 0.801);
-        }
-    }
+  }
 
-    &__container-right{
-        display: flex;
-        align-items: center;
-    }
-
-    &__ranked-container{
-        display: flex;
-        position: relative;
-        align-items: center;
-        border-radius: 50px;
-        padding-left: 0.5rem;
-        
-        &--inactive{
-            background-color: rgba(231, 231, 231, 0.404);
-            
-        }
-    }
-
-    &__friend-container{
-        display: none;
-
-        &--active{
-            display: flex;
-            width: auto;
-        }
-    }
-
-    &__img-button__friend{
-        width: 40px;
-        height: 40px;
-        margin: 0 0.8rem;
-        @include glow-hover;
-    
-        &--active{
-            opacity: 1;
-            @include glow;
-        }
-        &--inactive{
-            opacity: 0.5;
-        }
-    }
-    
-    &__ranked-button{
-        display: flex;
-        width: 160px;
-        height: 50px;
-        font-size: 18px;
-        justify-content: center;
-        align-items: center;
-        right: 0;
-        border-radius: 40px;
-        color: rgba(253, 217, 11, 0.801);
-        background-color: rgb(124, 124, 124);
-
-        &--inactive{
-            position: relative;
-            background-color: rgb(252, 211, 29);
-            color: black;
-        }
-    }
-}
-
-.streaming-service-img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.nav__img-button{
-    width: 40px;
-    height: 40px;
+  &__search {
+    width: 140px;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-right: 1rem;
+    color: rgba(253, 217, 11, 0.801);
+    background-color: black;
     @include glow-hover;
-}
+    :placeholder {
+      text-shadow: 0 0 10px #ffee10;
+      color: rgba(253, 217, 11, 0.801);
+    }
+  }
 
-.friend-img{
+  &__container-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__ranked-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 50px;
+    padding-left: 0.5rem;
+
+    &--inactive {
+      background-color: rgba(231, 231, 231, 0.404);
+    }
+  }
+
+  &__friend-container {
+    display: none;
+
+    &--active {
+      display: flex;
+      width: auto;
+    }
+  }
+
+  &__img-button__friend {
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    margin: 0 0.8rem;
+    @include glow-hover;
+
+    &--active {
+      opacity: 1;
+      @include glow;
+    }
+    &--inactive {
+      opacity: 0.5;
+    }
+  }
+
+  &__ranked-button {
+    display: flex;
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    border-radius: 40px;
+    color: rgba(253, 217, 11, 0.801);
+    background-color: rgb(124, 124, 124);
+
+    &--inactive {
+      position: relative;
+      background-color: rgb(252, 211, 29);
+      color: black;
+    }
+  }
 }
 
+.streaming-service-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.nav__img-button {
+  width: 40px;
+  height: 40px;
+  @include glow-hover;
+}
+
+.friend-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

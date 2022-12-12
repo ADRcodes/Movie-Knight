@@ -95,13 +95,15 @@ class MovieCard extends Component {
                         <a className={streamingInfoNetflix
                             ? 'movie__streaming-info-netflix movie__streaming-info-netflix--active'
                             : 'movie__streaming-info-netflix movie__streaming-info-netflix--inactive'}
-                            href={streamingInfoNetflix}>
+                            href={streamingInfoNetflix}
+                            target="_blank">
                             <img className='movie__netflix-icon' src={netflixLogo} alt='netflix button' />
                         </a>
                         <a className={streamingInfoDisney
                             ? 'movie__streaming-info-disney movie__streaming-info-disney--active'
                             : 'movie__streaming-info-disney movie__streaming-info-disney--inactive'}
-                            href={streamingInfoDisney}>
+                            href={streamingInfoDisney}
+                            target="_blank">
                             <img className='movie__disney-icon' src={disneyLogo} alt='Disney Button' />
                         </a>
                     </div>
